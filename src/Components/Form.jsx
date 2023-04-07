@@ -33,6 +33,8 @@ const Form = () => {
         <button>Send</button>
       </form>
       <h1>{message}</h1>
+      {console.log(user)}
+      {console.log(message)}
     </div>
   );
 };
