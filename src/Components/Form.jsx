@@ -12,7 +12,7 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     if(user.name.length > 5){
-      const emailRegex = /[a-z0-9!#$%&'+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'+/=?^_`{|}~-]+)@(?:[a-z0-9](?:[a-z0-9-][a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g
+      const emailRegex = /[a-z0-9!#$%&'+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'+/=?^_{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g
       if(emailRegex.test(user.email)){
         setMessage(`Gracias ${user.name}, te contactaremos cuanto antes vía mail`)
       } else {
@@ -33,8 +33,6 @@ const Form = () => {
         <button>Send</button>
       </form>
       <h1>{message}</h1>
-      {console.log(user)}
-      {console.log(message)}
     </div>
   );
 };
